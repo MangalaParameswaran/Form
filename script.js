@@ -165,13 +165,13 @@ for(let i=0; i<listFoodOption.length; i++){
     foodSelect.setAttribute("type","checkbox");
     foodSelect.setAttribute("name","food")
     foodSelect.setAttribute("value",listFoodOption[i].value);
-    foodSelect.classList.add("mt-4","ms-4","foodCheckbox");
+    foodSelect.classList.add("mt-5","ms-2","foodCheckbox");
     col6.append(foodSelect);
 
     let foodOption=document.createElement("label");
     foodOption.setAttribute("for",listFoodOption[i].text)
     foodOption.textContent=listFoodOption[i].text;
-    foodOption.classList.add("ps-1","pe-3")
+    foodOption.classList.add("ps-2","pe-3")
     col6.append(foodOption);
 }
 form.append(row6);
@@ -307,10 +307,6 @@ for (let i = 0; i < headerFields.length; i++) {
 // submit.addEventListener("click",foo);
 // function foo(){
 
-// }
-
-// ... (your existing code)
-
 //add click function to submit button
 submit.addEventListener("click", foo);
 function foo(event) {
@@ -340,28 +336,9 @@ function foo(event) {
 
     // Append the new row to the table body
     table.appendChild(newRow);
-
-    // Clear the form fields
-    clearForm();
 }
 
-function clearForm() {
-    // Iterate over form elements and clear values
-    for (let i = 0; i < form.elements.length; i++) {
-        let formElement = form.elements[i];
 
-        // Skip the submit button and other non-input elements
-        if (formElement.type !== "submit" && formElement.type !== "button") {
-            if (formElement.type === "checkbox") {
-                formElement.checked = false;
-            } else {
-                formElement.value = "";
-            }
-        }
-    }
-}
-
-// ... (your existing code)
 
 
 
