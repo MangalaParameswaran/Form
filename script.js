@@ -260,6 +260,7 @@ function fun(){
     foodSelect.value="";
     inputState.value="";
     inputCountry.value="";
+    cell.value="";
 }
 
 
