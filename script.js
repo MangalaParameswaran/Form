@@ -147,12 +147,11 @@ row6.append(col6);
 
 let lableFood=document.createElement("label");
 lableFood.setAttribute("for","food");
-lableFood.textContent="Must select at least 2 out of 5 Option";
+lableFood.textContent="choice of food(Must select at least 2 out of 5 Option)";
 lableFood.classList.add("mt-4","w-100")
 col6.append(lableFood);
 
 let listFoodOption=[
-    {value:"choice of food",text:"Choice of food"},
     {value:"pizza",text:"Pizza"},
     {value:"burger",text:"Burger"},
     {value:"sussi",text:"Sussi"},
