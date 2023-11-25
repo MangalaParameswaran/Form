@@ -33,7 +33,14 @@ input, select, textarea {
     border: none;
     box-shadow:  3px 3px 10px;
 }
-
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+p{
+    text-align: center;
+    
+}
 #button , #button1{
     color:black;
     font-weight: bold;
