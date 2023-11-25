@@ -5,15 +5,16 @@ body {
 table {
     width: 80%;
     position: absolute;
-    top: 53em;
-    left: 4em;
+    top: 62em;
+    left: .5em;
     box-shadow:  5px 5px 15px;
 
 }
 form{
     position: absolute;
-    left: 4em;
+    left: .5em;
     width: 80%;
+    margin-top: 2em;
 }
 
 label {
@@ -41,7 +42,7 @@ input, select, textarea {
     border-radius: 1em;
     cursor: pointer;
     position: relative;
-    top: 18px;
+    top: 5em;
     margin-left: 8em;
     box-shadow:  3px 3px 10px;
 
