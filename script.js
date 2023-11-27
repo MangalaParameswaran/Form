@@ -9,6 +9,9 @@ const description = document.createElement("p");
 description.id = "description";
 description.textContent = "Form and Table will be added dynamically using Javascript DOM Manipulation"; 
 document.body.append(description);
+let form1=document.createElement("div");
+form1.className="form-group";
+form.append(form1);
 
 const firstNameLable = createLable("first-name", "First Name:");
 const firstNameInput = createInput("text", "first-name", "Enter your first name");
@@ -19,7 +22,7 @@ const addressTextArea = createTextarea("address", "30", "5");
 const pinCodeLable = createLable("pincode", "PinCode:");
 const pinCodeInput = createInput("text", "pincode", "Enter your PinCode");
 const genderLable = createLable("gender", "Gender:");
-const genderSelect = createGender("gender", ["Male", "Female", "Transgender"]);
+const genderSelect = createGender("gender", ["Select ur gender","Male", "Female", "Transgender"]);
 const foodLable = createLable("food", "Food:");
 const foodInput = createInput("text", "food", "Enter ur fvrt food");
 const stateLable = createLable("state", "State:");
@@ -28,8 +31,8 @@ const countryLable = createLable("country", "Country:");
 const countryInput = createInput("text", "country", "Enter ur Country");
 const submitButton = createButton("button", "submit", "Submit", submitform);
 const clearButton = createClearbutton("button1", "button", "Clear");
-document.body.append(form);
-form.append(
+// document.body.append(form);
+form1.append(
   firstNameLable,
   firstNameInput,
   lastNameLable,

@@ -4,8 +4,8 @@ body {
 
 table {
     width: 80%;
-    position: absolute;
-    top: 62em;
+    position: relative;
+    top: 58em;
     left: .5em;
     box-shadow:  5px 5px 15px;
 
@@ -14,7 +14,7 @@ form{
     position: absolute;
     left: .5em;
     width: 80%;
-    margin-top: 2em;
+    margin-top: 4em;
 }
 
 label {
@@ -50,16 +50,12 @@ p{
     cursor: pointer;
     position: relative;
     top: 3em;
-    margin-left: 7em;
+    margin-left: 3em;
     box-shadow:  3px 3px 10px;
 
 }
 #button1{
-    margin-top: 1em;
-}
-
-button:hover {
-    background-color: blue;
+    margin-top: 1.5em;
 }
 th, td {
     border: 1px solid #ddd;
