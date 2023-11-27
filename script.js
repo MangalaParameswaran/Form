@@ -14,22 +14,22 @@ form1.className="form-group";
 form.append(form1);
 
 const firstNameLable = createLable("first-name", "First Name:");
-const firstNameInput = createInput("text", "first-name", "Enter your first name");
+const firstNameInput = createInput("text", "first-name", "Enter your first name","true");
 const lastNameLable = createLable("las-tname", "Last Name:");
-const lastNameInput = createInput("text", "last-name", "Enter your last name");
-const addressLable = createLable("address", "Adddress:");
+const lastNameInput = createInput("text", "last-name", "Enter your last name","true");
+const addressLable = createLable("address", "enter your address:");
 const addressTextArea = createTextarea("address", "30", "5");
 const pinCodeLable = createLable("pincode", "PinCode:");
-const pinCodeInput = createInput("text", "pincode", "Enter your PinCode");
-const genderLable = createLable("gender", "Gender:");
-const genderSelect = createGender("gender", ["Select ur gender","Male", "Female", "Transgender"]);
+const pinCodeInput = createInput("text", "pincode", "Enter your PinCode","true");
+const genderLable = createLable("gender", "Gender:","true");
+const genderSelect = createGender("gender", ["Select ur gender","Male", "Female", "Transgender","true"]);
 const foodLable = createLable("food", "Food:");
 const foodInput = createInput("text", "food", "Enter ur fvrt food");
 const stateLable = createLable("state", "State:");
 const stateInput = createInput("text", "state", "Enter ur state");
 const countryLable = createLable("country", "Country:");
 const countryInput = createInput("text", "country", "Enter ur Country");
-const submitButton = createButton("button", "submit", "Submit", submitform);
+const submitButton = createButton("submit", "submit", "Submit", submitform,"btn");
 const clearButton = createClearbutton("button1", "button", "Clear");
 // document.body.append(form);
 form1.append(
@@ -54,6 +54,7 @@ form1.append(
 );
 
 const table = document.createElement("table");
+table.className="table";
 const tableHead = document.createElement("thead");
 const tableBody = document.createElement("tbody");
 const tableHeaderRow = document.createElement("tr");
@@ -82,11 +83,12 @@ function createLable(forAttr, textContent) {
   lable.textContent = textContent;
   return lable;
 }
-function createInput(type, id, placeholder) {
+function createInput(type, id, placeholder,required) {
   let input = document.createElement("input");
   input.type = type;
   input.id = id;
   input.placeholder = placeholder;
+  input.required=required;
   return input;
 }
 function createTextarea(id, colAttr, rowAttr) {
@@ -96,9 +98,10 @@ function createTextarea(id, colAttr, rowAttr) {
   textarea.rows = rowAttr;
   return textarea;
 }
-function createGender(id, options) {
+function createGender(id, options,required) {
   let select = document.createElement("select");
   select.id = id;
+  select.required=required;
 
   options.forEach((element) => {
     let option = document.createElement("option");
@@ -114,15 +117,18 @@ function createClearbutton(id, type, textContent) {
   Clear.textContent = textContent;
   Clear.addEventListener("click", () => {
     form.reset();
+    tableBody.innerText="";
   });
   return Clear;
+
 }
-function createButton(id, type, textContent, onClickFunction) {
+function createButton(id, type, textContent, onClickFunction, className) {
   const button = document.createElement("button");
   button.id = id;
   button.type = type;
   button.textContent = textContent;
   button.addEventListener("click", onClickFunction);
+  button.className=className;
   return button;
 }
 function submitform(event) {
