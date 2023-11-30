@@ -5,7 +5,7 @@ body {
 table {
     width: 80%;
     position: relative;
-    top: 58em;
+    top: 65em;
     left: .5em;
     box-shadow:  5px 5px 15px;
 
@@ -41,7 +41,7 @@ p{
     text-align: center;
     
 }
-#button , #button1{
+#submit , #button1{
     color:black;
     font-weight: bold;
     padding: 10px 15px;

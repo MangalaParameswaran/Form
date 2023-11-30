@@ -21,8 +21,8 @@ const addressLable = createLable("address", "enter your address:");
 const addressTextArea = createTextarea("address", "30", "5");
 const pinCodeLable = createLable("pincode", "PinCode:");
 const pinCodeInput = createInput("text", "pincode", "Enter your PinCode","true");
-const genderLable = createLable("gender", "Gender:","true");
-const genderSelect = createGender("gender", ["Select ur gender","Male", "Female", "Transgender","true"]);
+const genderLable = createLable("gender", "Gender:");
+const genderRadioGroup = createGenderRadioGroup("gender", ["Male", "Female", "Transgender"], true);
 const foodLable = createLable("food", "Food:");
 const foodInput = createInput("text", "food", "Enter ur fvrt food");
 const stateLable = createLable("state", "State:");
@@ -42,7 +42,7 @@ form1.append(
   pinCodeLable,
   pinCodeInput,
   genderLable,
-  genderSelect,
+  genderRadioGroup,
   foodLable,
   foodInput,
   stateLable,
@@ -98,17 +98,27 @@ function createTextarea(id, colAttr, rowAttr) {
   textarea.rows = rowAttr;
   return textarea;
 }
-function createGender(id, options,required) {
-  let select = document.createElement("select");
-  select.id = id;
-  select.required=required;
+function createGenderRadioGroup(name, options, required) {
+  let radioGroup = document.createElement("div");
+  radioGroup.id = name + "RadioGroup";
+  radioGroup.required = required;
 
-  options.forEach((element) => {
-    let option = document.createElement("option");
-    option.textContent = element;
-    select.append(option);
+  options.forEach((option) => {
+    let radioInput = document.createElement("input");
+    radioInput.type = "radio";
+    radioInput.name = name;
+    radioInput.value = option;
+    radioInput.id = option.toLowerCase(); 
+    radioGroup.appendChild(radioInput);
+
+    let radioLabel = document.createElement("label");
+    radioLabel.for = option.toLowerCase();
+    radioLabel.textContent = option;
+    radioGroup.appendChild(radioLabel);
+    radioGroup.appendChild(document.createElement("br"));
   });
-  return select;
+
+  return radioGroup;
 }
 function createClearbutton(id, type, textContent) {
   const Clear = document.createElement("button");
