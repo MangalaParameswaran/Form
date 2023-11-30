@@ -149,7 +149,7 @@ function submitform(event) {
     lastNameInput.value,
     addressTextArea.value,
     pinCodeInput.value,
-    genderSelect.value,
+    document.querySelector('input[name="gender"]:checked').value,
     foodInput.value,
     stateInput.value,
     countryInput.value
