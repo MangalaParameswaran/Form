@@ -29,7 +29,7 @@ const stateLable = createLable("state", "State:");
 const stateInput = createInput("text", "state", "Enter ur state");
 const countryLable = createLable("country", "Country:");
 const countryInput = createInput("text", "country", "Enter ur Country");
-const submitButton = createButton("submit", "submit", "Submit", submitform,"btn");
+const submitButton = createButton("submit", "submit", "Submit", submitform, "btn");
 const clearButton = createClearbutton("button1", "button", "Clear");
 // document.body.append(form);
 form1.append(
@@ -96,8 +96,10 @@ function createTextarea(id, colAttr, rowAttr) {
   textarea.id = id;
   textarea.cols = colAttr;
   textarea.rows = rowAttr;
+  textarea.placeholder = "Enter your address"; 
   return textarea;
 }
+
 function createGenderRadioGroup(name, options, required, className) {
   let radioGroup = document.createElement("div");
   radioGroup.id = name + "RadioGroup";
@@ -139,7 +141,7 @@ function createButton(id, type, textContent, onClickFunction, className) {
   button.type = type;
   button.textContent = textContent;
   button.addEventListener("click", onClickFunction);
-  button.className=className;
+  button.classList.add(className, "btn-primary"); 
   return button;
 }
 function submitform(event) {
