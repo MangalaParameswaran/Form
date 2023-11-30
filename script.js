@@ -22,7 +22,7 @@ const addressTextArea = createTextarea("address", "30", "5");
 const pinCodeLable = createLable("pincode", "PinCode:");
 const pinCodeInput = createInput("text", "pincode", "Enter your PinCode","true");
 const genderLable = createLable("gender", "Gender:");
-const genderRadioGroup = createGenderRadioGroup("gender", ["Male", "Female", "Transgender"], true);
+const genderRadioGroup = createGenderRadioGroup("gender", ["Male", "Female", "Transgender"], true,"radio");
 const foodLable = createLable("food", "Food:");
 const foodInput = createInput("text", "food", "Enter ur fvrt food");
 const stateLable = createLable("state", "State:");
@@ -98,10 +98,11 @@ function createTextarea(id, colAttr, rowAttr) {
   textarea.rows = rowAttr;
   return textarea;
 }
-function createGenderRadioGroup(name, options, required) {
+function createGenderRadioGroup(name, options, required, className) {
   let radioGroup = document.createElement("div");
   radioGroup.id = name + "RadioGroup";
   radioGroup.required = required;
+  radioGroup.className=className;
 
   options.forEach((option) => {
     let radioInput = document.createElement("input");
